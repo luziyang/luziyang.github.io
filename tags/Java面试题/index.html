@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content=",,,,,," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,19 +84,15 @@
 
 
 
-<meta name="description" content="1、项目启动时过滤Servlet请求（配置在web.xml文件中）
-  &amp;lt;servlet&amp;gt;    &amp;lt;servlet-name&amp;gt;luziyangSpring&amp;lt;/servlet-name&amp;gt;    &amp;lt;servlet-class&amp;gt;org.springframework.web.servlet.DispatcherServlet&amp;lt;/servlet-cla">
+<meta name="description" content="good good study,day day up">
 <meta property="og:type" content="website">
-<meta property="og:title" content="SpringMVC(常用XML文件配置)">
-<meta property="og:url" content="http://luziyang.github.io/Spring/SpringMVC(常用XML文件配置).html">
+<meta property="og:title" content="luziyang-->bolg">
+<meta property="og:url" content="http://luziyang.github.io/tags/Java面试题/index.html">
 <meta property="og:site_name" content="luziyang-->bolg">
-<meta property="og:description" content="1、项目启动时过滤Servlet请求（配置在web.xml文件中）
-  &amp;lt;servlet&amp;gt;    &amp;lt;servlet-name&amp;gt;luziyangSpring&amp;lt;/servlet-name&amp;gt;    &amp;lt;servlet-class&amp;gt;org.springframework.web.servlet.DispatcherServlet&amp;lt;/servlet-cla">
-<meta property="og:updated_time" content="2016-12-28T07:46:34.000Z">
+<meta property="og:description" content="good good study,day day up">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringMVC(常用XML文件配置)">
-<meta name="twitter:description" content="1、项目启动时过滤Servlet请求（配置在web.xml文件中）
-  &amp;lt;servlet&amp;gt;    &amp;lt;servlet-name&amp;gt;luziyangSpring&amp;lt;/servlet-name&amp;gt;    &amp;lt;servlet-class&amp;gt;org.springframework.web.servlet.DispatcherServlet&amp;lt;/servlet-cla">
+<meta name="twitter:title" content="luziyang-->bolg">
+<meta name="twitter:description" content="good good study,day day up">
 
 
 
@@ -114,13 +110,7 @@
   };
 </script>
 
-  <title>
-  
-
-  
-    SpringMVC(常用XML文件配置) | luziyang-->bolg
-  
-</title>
+  <title> 标签: Java面试题 | luziyang-->bolg </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -219,27 +209,46 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        Java面试题
+        <small>标签</small>
+      </h2>
+    </div>
+
     
-    
-      <p>1、项目启动时过滤Servlet请求（配置在web.xml文件中）</p>
-<p><pre class="lang:java decode:true">  &lt;servlet&gt;<br>    &lt;servlet-name&gt;luziyangSpring&lt;/servlet-name&gt;<br>    &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;<br>    &lt;init-param&gt;<br>         &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;<br>         &lt;param-value&gt;/WEB-INF/root-context.xml&lt;/param-value&gt;<br>    &lt;/init-param&gt;<br>    &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;<br>  &lt;/servlet&gt;</pre></p>
-<p>  &lt;servlet-mapping&gt;<br>     &lt;servlet-name&gt;luziyangSpring&lt;/servlet-name&gt;<br>     &lt;url-pattern&gt;/&lt;/url-pattern&gt;<br>  &lt;/servlet-mapping&gt;<br>解释：将所有的Controller请求过滤进来，转入root-context.xml文件<br>2、中文处理（web.xml文件中）</p>
-<p><pre class="lang:java decode:true ">&lt;filter&gt;<br>        &lt;filter-name&gt;characterEncodingFilter&lt;/filter-name&gt;<br>        &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;<br>        &lt;init-param&gt;<br>            &lt;param-name&gt;encoding&lt;/param-name&gt;<br>            &lt;param-value&gt;UTF-8&lt;/param-value&gt;<br>        &lt;/init-param&gt;<br>        &lt;init-param&gt;<br>            &lt;param-name&gt;forceEncoding&lt;/param-name&gt;<br>            &lt;param-value&gt;true&lt;/param-value&gt;<br>        &lt;/init-param&gt;<br>    &lt;/filter&gt;<br>    &lt;filter-mapping&gt;<br>        &lt;filter-name&gt;characterEncodingFilter&lt;/filter-name&gt;<br>        &lt;url-pattern&gt;/*&lt;/url-pattern&gt;<br>    &lt;/filter-mapping&gt;</pre><br>3、视图解析器（配置在root-context.xml文件中）<br><!-- 视图解析器 --></p>
-<p><pre class="lang:java decode:true"> &lt;!– 视图解析器 –&gt;<br>    &lt;bean class=”org.springframework.web.servlet.view.InternalResourceViewResolver”&gt;<br>        &lt;property name=”suffix” value=”.jsp”/&gt; &lt;!– 视图后缀,controller中的方法返回的url字符串会添加该后缀 –&gt;<br>        &lt;property name=”prefix” value=”/WEB-INF/jsp/“/&gt; &lt;!– 视图后缀controller中的方法返回的url字符串会添加该前缀 –&gt;<br>    &lt;/bean&gt;</pre><br>4、时间格式转化（配置在root-context.xml文件中）</p>
-<p><pre class="lang:java decode:true">&lt;?xml version=”1.0” encoding=”UTF-8”?&gt;<br>&lt;beans xmlns=”<a href="http://www.springframework.org/schema/beans" target="_blank" rel="external">http://www.springframework.org/schema/beans</a>“<br>    xmlns:xsi=”<a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank" rel="external">http://www.w3.org/2001/XMLSchema-instance</a>“<br>    xmlns:mvc=”<a href="http://www.springframework.org/schema/mvc" target="_blank" rel="external">http://www.springframework.org/schema/mvc</a>“<br>    xmlns:p=”<a href="http://www.springframework.org/schema/p" target="_blank" rel="external">http://www.springframework.org/schema/p</a>“<br>    xmlns:context=”<a href="http://www.springframework.org/schema/context" target="_blank" rel="external">http://www.springframework.org/schema/context</a>“<br>    xsi:schemaLocation=”<br>        <a href="http://www.springframework.org/schema/beans" target="_blank" rel="external">http://www.springframework.org/schema/beans</a><br>        <a href="http://www.springframework.org/schema/beans/spring-beans.xsd" target="_blank" rel="external">http://www.springframework.org/schema/beans/spring-beans.xsd</a><br>        <a href="http://www.springframework.org/schema/context" target="_blank" rel="external">http://www.springframework.org/schema/context</a><br>        <a href="http://www.springframework.org/schema/context/spring-context.xsd" target="_blank" rel="external">http://www.springframework.org/schema/context/spring-context.xsd</a><br>        <a href="http://www.springframework.org/schema/mvc" target="_blank" rel="external">http://www.springframework.org/schema/mvc</a><br>        <a href="http://www.springframework.org/schema/mvc/spring-mvc.xsd&quot;&amp;gt" target="_blank" rel="external">http://www.springframework.org/schema/mvc/spring-mvc.xsd&quot;&amp;gt</a>;</pre></p>
-<pre><code>&amp;lt;context:component-scan base-package=&quot;com.luziyang&quot;/&amp;gt;
-&amp;lt;mvc:default-servlet-handler/&amp;gt;
- &amp;lt;!-- 启动转换器 --&amp;gt;
-&amp;lt;mvc:annotation-driven conversion-service=&quot;conversionService&quot;/&amp;gt;
-&amp;lt;!-- 注册转换器 --&amp;gt;
-&amp;lt;bean id=&quot;conversionService&quot;
-    class=&quot;org.springframework.format.support.FormattingConversionServiceFactoryBean&quot;&amp;gt;
-&amp;lt;/bean&amp;gt;
-</code></pre><p>&lt;/beans&gt;<br>配置完在实体类的日期属性前加上注释@DateTimeFormat(pattern = “yyyy-MM-dd hh:mm:ss”)</p>
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2016/12/28/Java多线程面试题/" itemprop="url">
+              
+                <span itemprop="name">Java多线程面试题</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-12-28T14:48:17+08:00"
+              content="2016-12-28" >
+          12-28
+        </time>
+      </div>
+
+    </header>
+  </article>
+
 
     
   </div>
+
+  
 
 
           </div>
@@ -247,10 +256,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -282,7 +287,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -290,7 +295,7 @@
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -299,7 +304,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content=",,,,,," />
+  <meta name="keywords" content="Java基础," />
 
 
 
@@ -84,25 +84,16 @@
 
 
 
-<meta name="description" content="IOC(inversion of Controller),讲控制权(创建对象和对象之间的依赖关系的权利)交给Spring容器。
-接口驱动设计(Interface Deiven Design) 的好处，可以灵活提供不同的子类实现(其实就是解耦),提高程序的灵活性、可扩展性、可维护性。
-IOC模式将耦合代码从程序中移出，放到统一的XML文件中管理。
-由IOC容器通过配置文件来管理对象的生命周期、依赖关">
-<meta property="og:type" content="website">
-<meta property="og:title" content="IOC的优缺点(Spring)">
-<meta property="og:url" content="http://luziyang.github.io/JavaSE/IOC的优缺点(Spring).html">
+<meta name="description" content="Java程序的运行必须经过编写、编译、运行3个步骤">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java运行机制">
+<meta property="og:url" content="http://luziyang.github.io/2016/12/28/Java运行机制/index.html">
 <meta property="og:site_name" content="luziyang-->bolg">
-<meta property="og:description" content="IOC(inversion of Controller),讲控制权(创建对象和对象之间的依赖关系的权利)交给Spring容器。
-接口驱动设计(Interface Deiven Design) 的好处，可以灵活提供不同的子类实现(其实就是解耦),提高程序的灵活性、可扩展性、可维护性。
-IOC模式将耦合代码从程序中移出，放到统一的XML文件中管理。
-由IOC容器通过配置文件来管理对象的生命周期、依赖关">
-<meta property="og:updated_time" content="2016-12-28T07:46:23.000Z">
+<meta property="og:description" content="Java程序的运行必须经过编写、编译、运行3个步骤">
+<meta property="og:updated_time" content="2017-02-08T02:35:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IOC的优缺点(Spring)">
-<meta name="twitter:description" content="IOC(inversion of Controller),讲控制权(创建对象和对象之间的依赖关系的权利)交给Spring容器。
-接口驱动设计(Interface Deiven Design) 的好处，可以灵活提供不同的子类实现(其实就是解耦),提高程序的灵活性、可扩展性、可维护性。
-IOC模式将耦合代码从程序中移出，放到统一的XML文件中管理。
-由IOC容器通过配置文件来管理对象的生命周期、依赖关">
+<meta name="twitter:title" content="Java运行机制">
+<meta name="twitter:description" content="Java程序的运行必须经过编写、编译、运行3个步骤">
 
 
 
@@ -120,13 +111,7 @@ IOC模式将耦合代码从程序中移出，放到统一的XML文件中管理�
   };
 </script>
 
-  <title>
-  
-
-  
-    IOC的优缺点(Spring) | luziyang-->bolg
-  
-</title>
+  <title> Java运行机制 | luziyang-->bolg </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -147,7 +132,7 @@ IOC模式将耦合代码从程序中移出，放到统一的XML文件中管理�
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -227,24 +212,141 @@ IOC模式将耦合代码从程序中移出，放到统一的XML文件中管理�
 
   <div id="posts" class="posts-expand">
     
-    
-      <p>IOC(inversion of Controller),讲控制权(创建对象和对象之间的依赖关系的权利)交给Spring容器。</p>
-<p>接口驱动设计(Interface Deiven Design) 的好处，可以灵活提供不同的子类实现(其实就是解耦),提高程序的灵活性、可扩展性、可维护性。</p>
-<p>IOC模式将耦合代码从程序中移出，放到统一的XML文件中管理。</p>
-<p>由IOC容器通过配置文件来管理对象的生命周期、依赖关系等，这样就不用编译具体的代码，从而实现组件的解耦。</p>
-<p>反射:就是将java类中的各种成分映射成相应的类。</p>
-<p>通俗的说，反射就是根据给出的字符串(类名等)来生成对象。</p>
-<p>反射的好处就是可以临时决定要生成哪一个对象，缺点是生成对象效率过低。</p>
-<p>IOC的优点:实现组件之间的解耦，提高程序的灵活性和可维护性。</p>
-<p>IOC的缺点:</p>
-<p>1、创建对象的步骤变复杂了，不直观。</p>
-<p>2、因为使用反射来创建对象，效率比较低。但相对与程序的可维护性来说，这不算什么。</p>
-<p>3、缺少IDE重构支持，如果修改了类名，还要到XML文件中修改，这似乎是所有XML方式的缺憾所在。</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Java运行机制
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-28T14:48:17+08:00" content="2016-12-28">
+              2016-12-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Java程序的运行必须经过编写、编译、运行3个步骤</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java基础/" rel="tag">#Java基础</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/28/Java多线程面试题/" rel="next" title="Java多线程面试题">
+                <i class="fa fa-chevron-left"></i> Java多线程面试题
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/12/前端知识总结/" rel="prev" title="前端知识总结">
+                前端知识总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -276,8 +378,17 @@ IOC模式将耦合代码从程序中移出，放到统一的XML文件中管理�
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -288,7 +399,7 @@ IOC模式将耦合代码从程序中移出，放到统一的XML文件中管理�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -296,7 +407,7 @@ IOC模式将耦合代码从程序中移出，放到统一的XML文件中管理�
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -305,7 +416,7 @@ IOC模式将耦合代码从程序中移出，放到统一的XML文件中管理�
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -327,6 +438,17 @@ IOC模式将耦合代码从程序中移出，放到统一的XML文件中管理�
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -423,6 +545,10 @@ IOC模式将耦合代码从程序中移出，放到统一的XML文件中管理�
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
