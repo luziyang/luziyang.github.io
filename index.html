@@ -233,6 +233,403 @@
             
               
                 
+                <a class="post-title-link" href="/2017/03/07/Java反射机制浅谈/" itemprop="url">
+                  Java反射机制浅谈
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-07T10:34:08+08:00" content="2017-03-07">
+              2017-03-07
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>一、何谓反射机制<br>    JAVA反射机制是在运行状态中，对于任意一个类，都能知道这个类的属性和方法;对于任意一个对象,都能调用它的任意一个方法，这种动态获取的信息<br>    以及动态调用对象的方法的功能被称为java语言的反射机制。<br>二、反射机制如何实现<br>    谈到”反射机制”，最诱人的，莫过于”动态”二字了.接触过C语言的同学都知道，C语言中也有个和动态搭上边的方法:malloc()函数。其实这里的两个动态<br>    是一个意思，都指的是非编译时处理或者运行时处理。这种机制可以让程序的弹性增加不少，因为借由此机制，客户可以在程序运行时改变一些他关心的<br>    性质:分配内存，调用某个类。</p>
+<pre><code>首先不得不提到的是java.lang.Class这个类。
+
+有这么一段话：
+Java程序在运行时，Java运行时系统一直对所有的对象进行所谓的运行时类型标识。这项信息纪录了每个对象所属的类。虚拟机通常使用运行时类型信息选
+准正确方法去执行，用来保存这些类型信息的类是Class类。
+
+也就是说，ClassLoader找到了需要调用的类时(Java为了调控内存的调用消耗，类的加载都要在需要时再进行，很抠但是很有效)，就会加载它，然后根据
+.class文件内记载的类信息来产生一个与该类相联系的独一无二的Class对象。该类的对像记载了该类的字段，方法等信息。以后JVM要产生该类的实例，就根据
+内存中存在的该CLass类所记载的信息(Class对象应该和我所了解的其他类一样会在堆内存中产生、消亡)来进行。
+
+而java中的Class类对象是可以人工自然性的(也就说开放的)得到的(虽然你无法像其他类一样运用构造器来得到他的实例，因为class对象都是jvm产生的。不过话说回来，
+客户产生的话也是毫无意义的)，而且，更伟大的是，基于这个基础，java实现了反射机制。
+
+获取Class对象有3种方式:
+1、
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/02/Mybatis面试题/" itemprop="url">
+                  Mybatis面试题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-02T10:47:29+08:00" content="2017-03-02">
+              2017-03-02
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/01/Java框架面试题/" itemprop="url">
+                  框架面试题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-01T16:57:08+08:00" content="2017-03-01">
+              2017-03-01
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、MVC<br>   MVC是为了将模型和业务彻底分离.<br>2、什么是Spring?<br>   Spring是个Java企业级应用的开源开发框架。Spring主要用来开发Java应用，但是有些扩展是针对构建J2EE平台的web应用。Spring框架目标是简化Java企业级应用开发，并通过pojo<br>   为基础的编程模型促进良好的编程习惯。<br>   简单来说。Spring就是一个轻量级的控制反转(IOC)和面向切面(AOP)编程的容器框架。<br>   轻量 : 从大小与开销两方面而言Spring都是轻量的。此外Spring是非入侵式的 : 使用Spring，我们的类还是pojo类，完全不用实现spring的类和接口等<br>   也就说，使用Spring中的应用对象不需要继承或实现类和接口</p>
+<p>   IOC : Spring通过控制反转来实现松耦合，当应用了IOC，一个对象依赖的其他对象会通过被动的方式传递进来，而不是这个对象创建或者查找依赖对象<br>   基本上就是对象不用自己手动创建和管理，完全由容器管理，我们只管用就行了</p>
+<p>   AOP : Spring 提供了面型切面编程的支持，AOP将与程序无关的内容分离提取，应用对象只实现其应该做的–完成业务逻辑–仅此而已。它们并不负责其他系统级关注点，例如日志或事务的支持。<br>   AOP将与业务无关的逻辑横切进真正的逻辑中</p>
+<p>   框架 ：Spring可以将简单的组件配置、组合成复杂的应用。在Spring中，应用对象被声明式地组合，典型的是在一个XML文件里。Spring也提供了很多基本功能(事务管理、持久化框架集成等等)，<br>   而用户就用跟多的时间去开发应用逻辑。</p>
+<p>   所有的Spring的这些特征都能帮助我们能够更干净、更可管理、并且易于测试的代码。它们也为Spring中的各种模块提供了基础支持</p>
+<p>   <em>借助Spring,荣国依赖注入，AOP应用，面向接口编程，来降低业务组件之间的耦合度，增强系统的扩展性。
+   </em>让已有的技术和框架更加易用。<br>   <em>利用其对hibernate的SessionFactory、事务管理的封装，更简洁的应用hibernate.
+   </em>Spring并不完全依赖于Spring,开发者可自由选用Spring框架的部分或全部<br>   <em>利用AOP思想，集中处理业务逻辑，减少重复代码，构建优雅的解决方案。
+   </em>低侵入式设计，代码污染极低。<br>3、什么是SpringBeans<br>   SpringBeans是那些Spring应用的主干的java对象。它们被Spring IOC容器初始化，装配和管理。这些beans通过容器中配置的元数据创建，比如、以XML文件中的<bean>的形式定义。<br>   Spring框架的Beans都是单件Beans。在bean tag中有个属性singleton，如果它被赋予TRUE，bean就是单例，否则就是一个prototype bean。默认是TRUE，所以所有在Spring框架中的Beans缺省都是单例。<br>4、Spring使用什么创建对象?<br>   通过反射创建对象<br>5、Spring通过什么来管理对象?<br>   Spring会通过反射创建对象，然后将对象存储在集合当中，并给每一个对象一个Key/name.当我们需要某个对象时，就可以直接通过key/name来获取对象，而且Spring在返回对象时还会通过DI将我们所需要的属性直接注入。<br>6、Spring中的单例bean是线程安全的吗?<br>   不是，因为是单例的所以和servlet相似，不是线程安全的<br>7、简单说下Spring中bean对象的生命周期?<br>   默认情况下在Spring荣丰器被创建时，所有的对象会被创建，在容器销毁时所有的对象会被销毁。但是当配置了lazy-ini为TRUE时，在容器创建时，对象不会被创建，只有在需要使用对象时才会创建对象。当然我们可以为每个<br>   bean制定对应的init和destory方法。<br>8、Spring的bean装配方式都有哪些?<br>   自动装配 : 无论是使用配置文件(autowire)还是使用注解(@autowire)，都可以配置为自动装配。配置方式为按类型装配(ByType),和按名称装配(ByName);<br>   手动装配 ：无论是使用配置文件(ref)还是使用注解(@resource)都可以直接指定装配bean的名字。</bean></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/13/SSM处理Responsebody中文乱码/" itemprop="url">
+                  SSM处理Responsebody中文乱码
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-13T11:29:50+08:00" content="2017-02-13">
+              2017-02-13
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/01/12/前端知识总结/" itemprop="url">
                   前端知识总结
                 </a>
@@ -327,7 +724,101 @@
             
               
                 
-                <a class="post-title-link" href="/2016/12/28/Java多线程面试题/" itemprop="url">
+                <a class="post-title-link" href="/2016/12/28/Java运行机制/" itemprop="url">
+                  Java运行机制
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-28T14:48:17+08:00" content="2016-12-28">
+              2016-12-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Java程序的运行必须经过编写、编译、运行3个步骤</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/28/Java面试题/" itemprop="url">
                   Java多线程面试题
                 </a>
               
@@ -390,102 +881,55 @@
       
         
           
-            <p>1、Java中多线程同步是什么?</p>
-<p>在多线程程序下，同步能控制对共享资源的访问。如果没有同步，当一个Java线程在修改一个共享变量时，</p>
+            <p>1、面向对象的基本特征<br>   封装、继承、多态。<br>   封装: 封装是保证软件部件具有优良的模块性的基础 ，封装的目标就是要实现部件的“高内聚、低耦合”，防止程序相互依赖性过高而带来的影响。在面向对象的编程语言中，对象是封装的基本单位，面向对象的封装<br>   比传统语言的封装更为清晰、更为有利.<br>   继承 : 在定义和实现一个类的时候，可以在一个已经纯在的类的基础上来进行，把这个已经纯在的类所定义的内容作为自己的内容，或修改原来的方法使之 更合适特殊的需要，这就是继承。提高了<br>   软件的可扩展性。<br>   多态 : 多态主要分为两种:方法的重写和方法的重载<br>          方法的重写是指在同一个类中的方法，方法名可以相同，返回值必须相同，参数列表不同，调用时通过参数列表来确定调用的方法。<br>          方法的重载是指在子类和父类之间，子类和父类中相同的方法，调用时为调用子类的方法，子类的方法会覆盖父类的方法，其中子类的访问修饰符的可访问范围必须要大于父类的可访问范围<br>2、Java的基本数据类型有哪些?String是基本数据类型吗？<br>   byte、char、short、int、long、float、double、Boolean String不是基本数据类型。<br>3、基本数据类型和引用数据类型有什么区别?<br>   基本数据类型类型值和引用全部存在栈中，而引用数据类型的应用存在栈中，而值存在堆中。基本数据类型没有属性和方法，引用数据类型有属性和方法<br>4、int和Integer有什么区别?<br>   int是基本数据类型，Integer是引用数据类型是int的包装类<br>5、String和StringBuffer和StringBuilder有什么区别?<br>   执行速度上 : StringBuilder&gt;StringBuffer&gt;String<br>   String : 字符串常量<br>   StringBuilder ：字符串变量 线程安全的。<br>   StringBuffer : 字符串变量  线程不安全的。<br>   String的每一次改变都是新创建了一个对象，而原来的对象就被垃圾回收掉了。<br>   而StringBuffer和StringBuilder就不一样了，它们是在原来对象上进行修改<br>6、运行时异常和一般异常有什么区别？<br>   Java提供了两种主要的异常:运行时异常runtime exception 和一般异常checked exception。<br>   对于后者这种异常，JAVA要求程序员对齐进行catch。<br>   运行时异常，出现这种异常时，虚拟机会吧异常一直往上抛，如果没有处理块，到达最上层，造成线程终止。<br>7、Error和Exception有什么区别?<br>   Error表示系统级的错误、是Java环境内部的错误或者硬件问题<br>   Exception表示需要捕捉或者需要程序进行处理的异常，他处理的因为程序设计的瑕疵而引起的问题或者在外输入而引发的一系列问题，需要自己用代码解决。<br>8、简述ArrayLis、Vector、和LinkedList的存储特性和特性。<br>   ArrayList和Vector没有太大的区别，Vector是线程安全的，ArrayList是线程非安全的，两者都使用数组存储。<br>   LinkList采用双向链表存储。<br>   ArrayList的查询效率较高。LinkList的插入效率较高。<br>9、Collection和Collections有什么区别?<br>   Collection是集合类的上层接口，继承它的接口主要有Set和List。<br>   Collections是针对集合的一个帮助类，他提供一系列的静态方法实现对集合的搜索、排序、线程安全化操作。</p>
+<p>   Set是无序的，不可重复，当视图添加两个重复的元素时，添加操作失败，Add()方法返回False<br>   Set判断两个对象是否相等用equals，而不是==<br>   如果两个对象equals相等，add()返回false添加失败<br>10、HashMap和HashTable有什么区别?<br>   HashTable 是基于Dictionary类的，HashMap是Java2.0引进的Map接口的实现<br>   HashMap的建和值都可以为null，但是只有一个键为null，可以有很多值为null<br>   HashTable不能将null作为键或者值<br>   HashTable是线程安全的，HashMap是线程不安全的<br>11、Final可以修饰什么，不可以修饰什么？<br>   final修饰的变量为最终量，常量，不可以被修改。<br>   final修饰的类为最终类，不可以被继承<br>   final修饰的方法可以被继承，但是不能被覆盖<br>   final修饰的参数可以被读取，但是不能被修改</p>
+<p>   final不能修饰抽象类，接口，抽象方法<br>12、Sleep和wait有什么区别?<br>    wait():使一个线程处于等待状态，并且释放所持有的对象的lock。sleep():使一个正在运行的线程处于睡眠状态，是一个静态方法，调用此方法要捕捉InterruptedException异常。<br>    notify():唤醒一个处于等待状态的线程，注意的是在调用此方法的时候，并不能确切的唤醒某一个等待状态的线程，而是由JVM确定唤醒哪个线程，而且不是按优先级。<br>    Allnotity():唤醒所有处入等待状态的线程，注意并不是给所有唤醒线程一个对象的锁，而是让它们竞争。</p>
+<p>13、你是怎么理解同步和异步的?<br>    同步 : 多线程使用统一资源时，一个线程使用时，其他线程必须等待资源释放才能获取该资源。<br>    异步 : 多个线程可以同时使用该资源，无需等待<br>    同步可以理解为广播，异步可以理解为电话(占线)。<br>    同步可以避免死锁，线程安全。异步效率更高，但不安全。</p>
+<p>14、抽象类和接口有什么区别?<br>    抽象类可以声明非抽象方法，接口中的方法必须是抽象的。<br>    抽象类需要被其他类继承，接口需要被其他类实现，其中的抽象方法都需要被重写。<br>    抽象类中可以声明成员变量、接口中没有成员变量。<br>    抽象类中的方法修饰符可以为多样，而接口中的方法默认都是public acbstract接口中定义的变量都默认为public abstract final，即为常量<br>    一个类可以实现多个接口，但只可以继承一个抽象类，一个借口也可以继承多个接口与从而实现多继承<br>15、抽象方法为什么只能声明在抽象方法中或者接口中?<br>    因为抽象方法没有方法体，必须重写之后才能被调用<br>16、接口中可不可以有静态方法?<br>    不可以、因为接口中的所有方法都是抽象的，没有方法体的，static修饰的方法为静态方法，static修饰的方法是不能被重写的<br>17、重定向和转发有什么区别?<br>    重定向是两次请求，先向客户端返回一个地址，然后客户端访问改地址，地址栏会改变，第一次请求携带的数据会消失。<br>    转发是服务端将请求以及携带的数据带给其他组件，地址栏不变，客户端只接受返回的结果。<br>18、什么是GC?<br>    GC(Gabage Collection)是垃圾回收机制的意思，Java提供的GC功能可自动检测对象是否超过作用域而达到自动回收的目的，Java语言没有提供释放已分配内存的显示操作方法。<br>19、如何创建一个线程类?<br>    实现Runnable接口<br>    继承Thread类<br>20、什么是数据库连接池?<br>    数据库连接池是一种昂贵的资源，数据库连接影响到程序的性能指标。数据库连接池正是针对这个问题提出来的。数据库连接池负责分配、管理和释放数据库连接，它允许应用程序重复使用一个现有的<br>    数据库连接，而不是重新建立一个；释放空闲时间超过最大空闲时间的数据库连接来避免因为没有释放数据库连接而引起的数据库连接遗漏，这项操作能明显提高对数据库操作的性能。<br>21、Set是如何比较相同的元素的?<br>    HashSet是用HashCode比较的。<br>    TreeSet是继承Comparable接口实现compareTo方法比较的。</p>
+<pre><code>HashSet特点 : 
+            不能保证元素的排列顺序，顺序可能会发生变化
+            不是同步的
+            集合元素可以是null，但只能放入一个null
+            HashSet判断两个元素相等的标准是两个对象的hashcode()方法得到两个元素的hashcode值是否相等
+            所以，如果将一个对象放入HashSet中，需要重写该对象的equals()方法，和重写该对象的HashCode()方法
 
-          
-        
-      
-    </div>
+TreeSet特点 : 
+            TreeSet支持两种排序，自然排序和定制排序，其中自然排序为默认的排序方式。向TreeSet中添加的应该是同一个类的对象。
+            TreeSet判断两个对象不相等的方式是通过equals()方法返回false，或者通过CompareTo方法比较没有返回0.
+            自然排序:
+            自然排序使用要排序元素的ComparableTo方法来比较元素之间的大小关系，该方法返回一个整数值，实现了该接口的对象就可以比较大小.
+            该方法如果返回0，则说明被比较的两个对象相等，如果是负数，则表明obj1小于obj2.
+            如果我们将两个对象的equals方法总是返回true，则这两个对象的ComparatorTo方法返回应该为0.
+            定制排序:
+            自然排序是根据集合元素的大小，以升序排列，如果要定制排序，应该使用Comparator接口，实现 int compare(T o1,T o2)方法.
+</code></pre><p>22、四种访问修饰符都是什么?<br>    private:仅本类可访问<br>    public:所有皆可访问<br>    protecked:类自身、同包下、子类皆可访问<br>    default:本类和同包下能访问.<br>23、This和super分别代表什么?<br>    This代表当前类对象.<br>    Super代表父类对象.<br>24、静态代码块在什么时候执行，执行几次?<br>    静态代码块在类加载的时候执行，只执行一次.<br>25、非静态代码块在什么时候执行，执行几次?<br>    非静态代码块在创建类对象是执行，构造方法执行几次，代码块就执行几次.<br>26、Jsp和Servlet有什么关系?<br>    JSP是Servlet的扩展，本质上是Servlet的简易形式，更强调应用的外表表达.<br>    Jsp编译后是类Servlet.<br>    Servlet和Jsp主要的不同点在于Servlet的应用逻辑是在Java文件中并完全从表层中的HTML分离出来.<br>    而JSP的情况是Java和HTML可以组合成一个扩展名为.jsp的文件.JSP侧重于视图，Servlet主要用于控制逻辑.<br>27、Session的生命周期是什么?<br>    session在第一次请求是被创建，session生命周期销毁的第一种情况:<br>    如果没有设置最大存活时间(setMaxInactiveInterval)的话系统采用最大存活时间是30分钟.一旦超过最大存活时间没有访问服务器session会自动销毁<br>    第二种情况就是调用了httpSession的invalidate方法，使session失效，并且解绑之前所有设在session中的对象。<br>28、Servlet的生命周期是什么?<br>    只要符合当servlet容器被启动时，或者接收到需要这个servlet来响应第一个请求时才会创建servlet实例，对于每个servlet实例init()方法只被调用一次完成初始化工作，<br>    每次请求servlet都会调用service方法，调用destory方法释放实例。<br>29、什么是MVC?<br>    Model(模型)在java Web里面说的是JavaBean，在javaBean中除了其属性和字段，还可以有行为及其事件，JavaBean可以理解为普通Java对象。Java普通对象，就是符合Java规范的所有对象，<br>    这和实体类是两回事。业务逻辑和数据访问应该放在Model，也就是V负责展示数据，Controller除了转发不做任何业务逻辑。真正的逻辑事务、数据访问甚至算法都放在Model层中去。</p>
+<pre><code>Controller(控制器)是控制器的意思，所谓控制器，就是将用户请求转发给模型层，经过处理后把结果返回到页面展现的一个中间层，一般在JavaWeb中，JSP充当V，Servlet充当V，JavaBean充当M
+这里的Servlet接受输入，站到Model层去处理，处理结果保存后转发到JSP，然后展示数据。所以他的功能就是控制器的基本功能，他只管转发，在V和M的中间
+</code></pre><p>30、Servlet是线程安全的吗?如何开发线程安全的Servlet?<br>    当Tomcat接收到Client的HTTP请求时，Tomcat从线程池中取出一个线程，之后找到该请求对应的Servlet对象。如果该Servlet还未被请求过，那么将进行Servlet初始化并调用Servlet并调用service()方法。<br>    否则，直接调用service()方法。要注意的是每一个Servlet对象再Tomcat容器中只有一个实例对象，即是单例模式。如果多个HTTP请求请求的是同一个Servlet，那么着两个HTTP请求对应的线程将并发调用Servlet<br>    的service()方法。</p>
+<pre><code>开发线程安全的Servlet : 
+1、
+a :将参数变量本地化。多线程并不共享局部变量。所以我们要尽可能的在servlet中使用局部变量。
+b :使用同步代码块Synchronized，防止可能异步的代码块。这意味着线程需要派对处理。在使用同步代码块时要尽可能的缩小同步代码的范围，不要直接在service上使用同步快，这样会严重影响性能。
+2、属性的线程安全 : ServletContext、HttpSession、ServletRequest对象中属性ServletContext : 是线程不安全的，要对属性的读写进行同步处理或者进行深度Clone()。
+所以在Servlet上下文中尽可能少量保存会被修改（写）的数据，可以采取其他方式在多个Servlet中共享，比方我们可以使用单例模式来处理共享数据。
+HttpSession：（线程是不安全的）HttpSession对象在用户会话期间存在，只能在处理属于同一个Session的请求的线程中被访问，因此Session对象的属性访问理论上是线程安全的。当用户打开多个同
+属于一个进程的浏览器窗口，在这些窗口的访问属于同一个Session，会出现多次请求，需要多个工作线程来处理请求，可能造成同时多线程读写属性。这时我们需要对属性的读写进行同步处理：使用同步
+块Synchronized和使用读/写器来解决。
 
-    <div>
-      
-    </div>
+ServletRequest：（线程是安全的）对于每一个请求，由一个工作线程来执行，都会创建有一个新的ServletRequest对象，所以ServletRequest对象只能在一个线程中被访问。ServletRequest是线程安全的。
+注意：ServletRequest对象在service方法的范围内是有效的，不要试图在service方法结束后仍然保存请求对象的引用。
 
-    <div>
-      
-    </div>
+3，使用同步的集合类：使用Vector代替ArrayList，使用Hashtable代替HashMap。
 
-    <footer class="post-footer">
-      
+4，不要在Servlet中创建自己的线程来完成某个功能。Servlet本身就是多线程的，在Servlet中再创建线程，将导致执行情况复杂化，出现多线程安全问题。  
 
-      
+5，在多个servlet中对外部对象(比方文件)进行修改操作一定要加锁，做到互斥的访问。
 
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/28/Java运行机制/" itemprop="url">
-                  Java运行机制
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-28T14:48:17+08:00" content="2016-12-28">
-              2016-12-28
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Java程序的运行必须经过编写、编译、运行3个步骤</p>
+6，javax.servlet.SingleThreadModel接口是一个标识接口，如果一个Servlet实现了这个接口，那Servlet容器将保证在一个时刻仅有一个线程可以在给定的servlet实例的service方法中执行。
+将其他所有请求进行排队。服务器可以使用多个实例来处理请求，代替单个实例的请求排队带来的效益问题。服务器创建一个Servlet类的多个Servlet实例组成的实例池，对于每个请求分配Servlet
+实例进行响应处理，之后放回到实例池中等待下此请求。这样就造成并发访问的问题。此时,局部变量(字段)也是安全的，但对于全局变量和共享数据是不安全的，需要进行同步处理。而对于这样多实
+例的情况SingleThreadModel接口并不能解决并发访问问题。 
+</code></pre><p>31、什么是事务?<br>    事务是访问并可能更新数据库中各种数据项的一个程序执行单元。通俗的说就是一组操作要么一起成功要么一起失败。<br>32、事务的4个基本特征是什么?<br>    原子性 : 在整个事务的所有操作中，要么一起完成，要么一起失败，不可能停滞在某个环节。事务在执行过程中发生错误，会被回滚(roll back)到事务的开始前状态，就像这个事务从来没有执行过一样。<br>    一致性 : 在事务执行前后，数据库的完整性约束没有发生改变。<br>    隔离性 : 隔离状态执行事务，使他们好像是系统在给定时间内执行的唯一操作。如果有两个事务，运行在相同的时间内，执行相同的功能，事物的隔离性将确保没一件事务在系统中认为只有该事务在运行系统。<br>    这种属性有时成为串行化，为了防止事务操作间的混淆，必须串行化活序列化请求，使得在同一时间内仅仅有一个请求用于同一数据。<br>    持久性 : 在事务完成以后，该事务所对数据库所做的更改便持久的保存在数据库之中，并不会被回滚。<br>33、数据库表常见约束有哪些、<br>    唯一约束，主键约束，非空约束，默认约束，检查约束<br>34、主键约束和唯一约束有什么不同?<br>    主键约束和唯一约束都不能有重复的数据。<br>    主键约束不能为null，为一约束可以有一个null<br>    一张表中只能有一个主键，一张表可以有多个为一约束<br>35、索引有什么优点和缺点?<br>    索引会加快数据的查询速度，但是索引也需要存储空间，所以索引过多也会占用太多空间。由于更新数据是会更新索引，所以索引会降低增删改的效率。<br>36、数据库中的视图是什么？有什么作用?<br>    视图是一张虚拟表，可以理解为一个复杂查询的存储.<br>    视图一般都是只读的，视图可以存储复杂的查询，简化查询操作，可以隐藏必要的信息。保证数据库的安全。<br>37、数据库的三大范式是什么?<br>    第一范式 : 是指数据库表中的每一列都是不可分割的基本数据项，同一列中不能有多个值，即实体中的某个属性不能有多个值或者不能有重复的属性.<br>    第二范式 : 是在第一范式的基础上建立起来的，即满足第二范式必须先满足第一范式。第二范式要求数据库表中的每一个实例或行必须可以被唯一的区分。<br>    第三范式 : 要求一个数据库表中不包含已在其它表中已包含的非主关键字信息。<br>38、数据库优化思路?<br>    1、SQL语句优化<br>    1）、应尽量避免where子句中使用!=活&lt;&gt;操作符、否则将引起放弃索引而进行全表扫描<br>    2)、应当尽量避免where子句对字段进行null值判断，否则将导致引擎放弃使用索引而使用全表扫描，如:select  id from t where num is null 可以在num上设置默认值0:select id from t where num = 0<br>    3)、用where子句代替Having子句，因为Having只会在检索出所有记录之后才会对结果集进行过滤.<br>    4)、很多时候用Exits代替in是一个很好地选择<br>    2、索引优化<br>    3、数据库结构优化</p>
 
           
         
@@ -851,396 +1295,6 @@ url-pattern：表示哪些请求交给Spring Web MVC处理， &quot;/&quot; 是�
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/27/搭建个人博客教程/" itemprop="url">
-                  搭建个人博客教程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-27T10:28:41+08:00" content="2016-12-27">
-              2016-12-27
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>教程地址 : <a href="http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/" target="_blank" rel="external">http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/</a><br>常用命令 :<br>1、$ hexo new “” ： 生成一个md文件<br>2、$ hexo s -g ： 在本地localhost访问博客<br>3、配置SSH key : ssh-keygen -t rsa -C<br>4、$ hexo d -g ： 发布新博客<br>5、$ hexo s –debug 将bolg发布到本地,在浏览器输入”localhost:4000”可以预览效果<br>6、将其他wordpress导入github :<br>                            1、将文章从word仪表盘导出为Xml文件<br>                            2、安装wordpress插件 $ npm install hexo-migrator-wordpress –save<br>                            3、$ hexo migrator wordpress <source> 将导出的xml文件通过hexo转为md文件</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/21/luziyang/" itemprop="url">
-                  luziyang
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-21T13:43:32+08:00" content="2016-12-21">
-              2016-12-21
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>第一个 github bolg，hello world！！！！heheda</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/17/IOC的优缺点(Spring)/" itemprop="url">
-                  IOC的优缺点(Spring)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-17T14:09:49+08:00" content="2016-11-17">
-              2016-11-17
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>IOC(inversion of Controller),讲控制权(创建对象和对象之间的依赖关系的权利)交给Spring容器。</p>
-<p>接口驱动设计(Interface Deiven Design) 的好处，可以灵活提供不同的子类实现(其实就是解耦),提高程序的灵活性、可扩展性、可维护性。</p>
-<p>IOC模式将耦合代码从程序中移出，放到统一的XML文件中管理。</p>
-<p>由IOC容器通过配置文件来管理对象的生命周期、依赖关系等，这样就不用编译具体的代码，从而实现组件的解耦。</p>
-<p>反射:就是将java类中的各种成分映射成相应的类。</p>
-<p>通俗的说，反射就是根据给出的字符串(类名等)来生成对象。</p>
-<p>反射的好处就是可以临时决定要生成哪一个对象，缺点是生成对象效率过低。</p>
-<p>IOC的优点:实现组件之间的解耦，提高程序的灵活性和可维护性。</p>
-<p>IOC的缺点:</p>
-<p>1、创建对象的步骤变复杂了，不直观。</p>
-<p>2、因为使用反射来创建对象，效率比较低。但相对与程序的可维护性来说，这不算什么。</p>
-<p>3、缺少IDE重构支持，如果修改了类名，还要到XML文件中修改，这似乎是所有XML方式的缺憾所在。</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/28/为什么要使用Java虚拟机/" itemprop="url">
-                  为什么要使用Java虚拟机?
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-28T13:59:06+08:00" content="2016-10-28">
-              2016-10-28
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Java语言的一个非常重要的特点就是与平台的无关性。而使用Java虚拟机是实现这一特点的关键。一般的高级语言如果要在不同的平台上运行,至少需要编 译成不同的目标代码。而引入Java语言虚拟机后,Java语言在不同平台上运行时不需要重新编译。Java语言使用模式Java虚拟机屏蔽了与具体平台 相关的信息,使得Java语言编译程序只需生成在Java虚拟机上运行的目标代码(字节码),就可以在多种平台上不加修改地运行。Java虚拟机在执行字 节码时,把字节码解释成具体平台上的机器指令执行。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1286,7 +1340,7 @@ url-pattern：表示哪些请求交给Spring Web MVC处理， &quot;/&quot; 是�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1294,7 +1348,7 @@ url-pattern：表示哪些请求交给Spring Web MVC处理， &quot;/&quot; 是�
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -1303,7 +1357,7 @@ url-pattern：表示哪些请求交给Spring Web MVC处理， &quot;/&quot; 是�
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
