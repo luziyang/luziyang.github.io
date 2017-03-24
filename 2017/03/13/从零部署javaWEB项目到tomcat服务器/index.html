@@ -84,19 +84,22 @@
 
 
 
-<meta name="description" content="1 : Sql 数据库 : 支持Sql语言的数据库 . Oracl、MySql…2 : NoSql 数据库 : 不支持Sql语言的数据库 . Redis , MongoDb…
-两种数据库有n多区别..Sql 数据库                  NoSql数据库实施一致性                   简单快捷事物                        方便扩展多表联合查询">
+<meta name="description" content="1.工具准备    首先，要部署项目到服务器你得有台服务器。假设你有台linux系统的服务器。Shell命令工具：Xshell 5
+2.搭建环境    服务器有了，控制服务器的工具有了，那么就需要配置环境了。首先安装JDK，这里安装JDK1.8。linux安装软件的方式有很多，这里使用yum方式安装JDK.
+2.1连接服务器    打开Xshell5, 创建新连接，连接名称随意写，协议选SSH，主">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mongodb入门1-数据库的分类">
-<meta property="og:url" content="http://luziyang.github.io/2016/12/27/mongodb入门1-数据库的分类/index.html">
+<meta property="og:title" content="从零部署javaWEB项目到tomcat服务器">
+<meta property="og:url" content="http://luziyang.github.io/2017/03/13/从零部署javaWEB项目到tomcat服务器/index.html">
 <meta property="og:site_name" content="luziyang-->bolg">
-<meta property="og:description" content="1 : Sql 数据库 : 支持Sql语言的数据库 . Oracl、MySql…2 : NoSql 数据库 : 不支持Sql语言的数据库 . Redis , MongoDb…
-两种数据库有n多区别..Sql 数据库                  NoSql数据库实施一致性                   简单快捷事物                        方便扩展多表联合查询">
-<meta property="og:updated_time" content="2016-12-27T09:20:05.702Z">
+<meta property="og:description" content="1.工具准备    首先，要部署项目到服务器你得有台服务器。假设你有台linux系统的服务器。Shell命令工具：Xshell 5
+2.搭建环境    服务器有了，控制服务器的工具有了，那么就需要配置环境了。首先安装JDK，这里安装JDK1.8。linux安装软件的方式有很多，这里使用yum方式安装JDK.
+2.1连接服务器    打开Xshell5, 创建新连接，连接名称随意写，协议选SSH，主">
+<meta property="og:updated_time" content="2017-03-13T09:12:43.924Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mongodb入门1-数据库的分类">
-<meta name="twitter:description" content="1 : Sql 数据库 : 支持Sql语言的数据库 . Oracl、MySql…2 : NoSql 数据库 : 不支持Sql语言的数据库 . Redis , MongoDb…
-两种数据库有n多区别..Sql 数据库                  NoSql数据库实施一致性                   简单快捷事物                        方便扩展多表联合查询">
+<meta name="twitter:title" content="从零部署javaWEB项目到tomcat服务器">
+<meta name="twitter:description" content="1.工具准备    首先，要部署项目到服务器你得有台服务器。假设你有台linux系统的服务器。Shell命令工具：Xshell 5
+2.搭建环境    服务器有了，控制服务器的工具有了，那么就需要配置环境了。首先安装JDK，这里安装JDK1.8。linux安装软件的方式有很多，这里使用yum方式安装JDK.
+2.1连接服务器    打开Xshell5, 创建新连接，连接名称随意写，协议选SSH，主">
 
 
 
@@ -114,7 +117,7 @@
   };
 </script>
 
-  <title> mongodb入门1-数据库的分类 | luziyang-->bolg </title>
+  <title> 从零部署javaWEB项目到tomcat服务器 | luziyang-->bolg </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -234,7 +237,7 @@
             
             
               
-                mongodb入门1-数据库的分类
+                从零部署javaWEB项目到tomcat服务器
               
             
           </h1>
@@ -246,8 +249,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-27T10:36:51+08:00" content="2016-12-27">
-              2016-12-27
+            <time itemprop="dateCreated" datetime="2017-03-13T17:10:37+08:00" content="2017-03-13">
+              2017-03-13
             </time>
           </span>
 
@@ -274,10 +277,14 @@
       
 
       
-        <p>1 : Sql 数据库 : 支持Sql语言的数据库 . Oracl、MySql…<br>2 : NoSql 数据库 : 不支持Sql语言的数据库 . Redis , MongoDb…</p>
-<p>两种数据库有n多区别..<br>Sql 数据库                  NoSql数据库<br>实施一致性                   简单快捷<br>事物                        方便扩展<br>多表联合查询                 更好的性能</p>
-<p>MongDb :<br>1、无数据结构限制 : 没有表结构的限制，每条数据可以有完全不同的结构<br>                   业务开发方便快捷<br>                   sql数据库需要先定义表结构在使用<br>2、完全的索引支持 : redis的key-value<br>                  hbase的但索引，二级索引需要自己实现。<br>                  单键索引，多建索引: {x:1,y:1}<br>                  数组索引 : [“apple”,”lemon”]<br>                  全文索引 : “i am luziyang”<br>                  地理位置索引 : 2D<br>3、方便的冗余和扩展 : 复制集保证数据安全<br>                    分片扩展数据规模<br>4、良好的支持 : 完善的文档<br>               齐全的驱动支持</p>
-
+        <p>1.工具准备<br>    首先，要部署项目到服务器你得有台服务器。假设你有台linux系统的服务器。<br>Shell命令工具：Xshell 5</p>
+<p>2.搭建环境<br>    服务器有了，控制服务器的工具有了，那么就需要配置环境了。<br>首先安装JDK，这里安装JDK1.8。linux安装软件的方式有很多，这里使用yum方式安装JDK.</p>
+<p>2.1连接服务器<br>    打开Xshell5, 创建新连接，连接名称随意写，协议选SSH，主机填服务器的IP地址，端口号22(linux)，确定，按提示输入用户名密码，登录成功。</p>
+<p>2.2安装JDK1.8<br>    输入yum -y list java (shell命令下粘贴快捷键为shift+insert)查看yum库中的java资源文件，会出来许多跟java相关的资源，我们选择安装JDK1.8<br>    输入yum -y install java-1.8.0-openjdk，系统会自动将前缀为java-1.8.0-openjdk的文件安装到服务器上。等待安装。<br>    显示complete意味着安装完成。输入java -version显示出相应的java版本信息则证明安装成功。<br>    因为是使用yum安装，所以yum自动将java放到了/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.101-3.b13.el6_8.x86_64/<br>    此时输入 cd /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.101-3.b13.el6_8.x86_64会跳转到java根目录，再输入ll(两个小写的L)，会显示当前文件夹<br>    下的所有子文件，看以看到bin、jre、lib等文件都在。</p>
+<p>2.3安装tomcat(使用下载压缩包解压配置方式安装)<br>    打开tomcat官网下载tomcat8.0压缩包(注意是tar.gz后缀的,linux默认不支持zip压缩方式)。<br>Xshell没有上传下载功能，输入yum install lrzsz安装rzsz上传下载文件。提示Is this ok，输入y。提示complete，安装成功。<br>输入cd usr/local跳转到该目录，输入rz,会出现上传文件窗口，选择下载的tomcat8.0压缩包，上传.<br>    上传完成之后输入ll查看压缩包已经上传成功。<br>    输入tar -zxv -f apache-tomcat-8.5.5.tar.gz解压缩tomcat压缩包。<br>    输入mv apache-tomcat-8.5.5 tomcat将解压出来的文件夹改名成tomcat,以后使用路径的时候方便使用。<br>    输入ll可以看出tomcat文件夹已经存在，可以跳转进去发现bin、lib文件夹都在.<br>    输入/usr/local/tomcat/bin/startup.sh启动tomcat服务，浏览器地址栏输入ip地址:8080如果能打开tomcat页面就表示安装成功。<br>    启动tomcat<br>    输入/usr/local/tomcat/bin/startup.sh<br>    关闭tomcat命令/usr/local/tomcat/bin/shutdown.sh<br>    这里只为了演示用没有配置tomcat环境变量和设置tomcat服务开机自启动，这样的配置玩玩是可以的，但是真正的项目中是必须要一点一点好好配置的，不能服务器一重启还得手动一点一点去启动服务。想要配置的话自行百度，这里不做赘述。<br>2.4安装mysql<br>    安装步骤选择2.2和2.3都可以，安装就是那回事，把该配置的配置好就行了。其实更推荐2.3的安装方式，如果使用yum安装，乍一看很方便，一键安装，yum会自动将安装软件所需要的所有依赖都自动下载好，但是，你不知道安装在哪，找的话会很麻烦，而且不想2.3那样解压出来所有文件就都在一个文件夹下，yum可能会将文件分成好几个路径。所以为了方便以后使用和控制，建议使用2.3安装方式。<br>3.导出、上传war包<br>    在eclipse项目上右键&gt;&gt;export&gt;&gt;WAR file&gt;&gt;选择导出路径，导出。然后在xshell里跳转到tomcat中的webapps路径下，使用rz命令上传war包，重启tomcat(tomcat会自动解析war包)。在webapps路径下输入ll会发现项目已经解析出来了。<br>在浏览器中输入ip地址:8080/项目名就能访问了。</p>
+<pre><code>只是大概的找了个小白鼠服务器搞了搞，还有很多细节比如环境变量配置(可以从任何目录用快捷指令方便的对软件进行操控)、服务管理(服务自启动)、用户权限限制(mysql、ftp等用户不能随意访问)、tomcat端口号修改(tomcat默认端口号8080但是一般http访问的是80端口，而且linux限制非root用户程序是不能使用小于1024的端口的)、域名解析(让用户一点一点输入地址真的好么)等等都需要慢慢完善的。
+以上只是一个linux小白自己捣鼓出来的，写的仓促，知识储备也不多，难免有错误，发现错误了请留言指出，灰常感谢！
+</code></pre>
       
     </div>
 
@@ -301,17 +308,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/27/搭建个人博客教程/" rel="next" title="搭建个人博客教程">
-                <i class="fa fa-chevron-left"></i> 搭建个人博客教程
+              <a href="/2017/03/07/Java反射机制浅谈/" rel="next" title="Java反射机制浅谈">
+                <i class="fa fa-chevron-left"></i> Java反射机制浅谈
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/28/SSM配置过程/" rel="prev" title="SSM配置过程">
-                SSM配置过程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

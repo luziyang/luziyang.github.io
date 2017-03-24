@@ -233,6 +233,106 @@
             
               
                 
+                <a class="post-title-link" href="/2017/03/13/从零部署javaWEB项目到tomcat服务器/" itemprop="url">
+                  从零部署javaWEB项目到tomcat服务器
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-13T17:10:37+08:00" content="2017-03-13">
+              2017-03-13
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.工具准备<br>    首先，要部署项目到服务器你得有台服务器。假设你有台linux系统的服务器。<br>Shell命令工具：Xshell 5</p>
+<p>2.搭建环境<br>    服务器有了，控制服务器的工具有了，那么就需要配置环境了。<br>首先安装JDK，这里安装JDK1.8。linux安装软件的方式有很多，这里使用yum方式安装JDK.</p>
+<p>2.1连接服务器<br>    打开Xshell5, 创建新连接，连接名称随意写，协议选SSH，主机填服务器的IP地址，端口号22(linux)，确定，按提示输入用户名密码，登录成功。</p>
+<p>2.2安装JDK1.8<br>    输入yum -y list java (shell命令下粘贴快捷键为shift+insert)查看yum库中的java资源文件，会出来许多跟java相关的资源，我们选择安装JDK1.8<br>    输入yum -y install java-1.8.0-openjdk，系统会自动将前缀为java-1.8.0-openjdk的文件安装到服务器上。等待安装。<br>    显示complete意味着安装完成。输入java -version显示出相应的java版本信息则证明安装成功。<br>    因为是使用yum安装，所以yum自动将java放到了/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.101-3.b13.el6_8.x86_64/<br>    此时输入 cd /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.101-3.b13.el6_8.x86_64会跳转到java根目录，再输入ll(两个小写的L)，会显示当前文件夹<br>    下的所有子文件，看以看到bin、jre、lib等文件都在。</p>
+<p>2.3安装tomcat(使用下载压缩包解压配置方式安装)<br>    打开tomcat官网下载tomcat8.0压缩包(注意是tar.gz后缀的,linux默认不支持zip压缩方式)。<br>Xshell没有上传下载功能，输入yum install lrzsz安装rzsz上传下载文件。提示Is this ok，输入y。提示complete，安装成功。<br>输入cd usr/local跳转到该目录，输入rz,会出现上传文件窗口，选择下载的tomcat8.0压缩包，上传.<br>    上传完成之后输入ll查看压缩包已经上传成功。<br>    输入tar -zxv -f apache-tomcat-8.5.5.tar.gz解压缩tomcat压缩包。<br>    输入mv apache-tomcat-8.5.5 tomcat将解压出来的文件夹改名成tomcat,以后使用路径的时候方便使用。<br>    输入ll可以看出tomcat文件夹已经存在，可以跳转进去发现bin、lib文件夹都在.<br>    输入/usr/local/tomcat/bin/startup.sh启动tomcat服务，浏览器地址栏输入ip地址:8080如果能打开tomcat页面就表示安装成功。<br>    启动tomcat<br>    输入/usr/local/tomcat/bin/startup.sh<br>    关闭tomcat命令/usr/local/tomcat/bin/shutdown.sh<br>    这里只为了演示用没有配置tomcat环境变量和设置tomcat服务开机自启动，这样的配置玩玩是可以的，但是真正的项目中是必须要一点一点好好配置的，不能服务器一重启还得手动一点一点去启动服务。想要配置的话自行百度，这里不做赘述。<br>2.4安装mysql<br>    安装步骤选择2.2和2.3都可以，安装就是那回事，把该配置的配置好就行了。其实更推荐2.3的安装方式，如果使用yum安装，乍一看很方便，一键安装，yum会自动将安装软件所需要的所有依赖都自动下载好，但是，你不知道安装在哪，找的话会很麻烦，而且不想2.3那样解压出来所有文件就都在一个文件夹下，yum可能会将文件分成好几个路径。所以为了方便以后使用和控制，建议使用2.3安装方式。<br>3.导出、上传war包<br>    在eclipse项目上右键&gt;&gt;export&gt;&gt;WAR file&gt;&gt;选择导出路径，导出。然后在xshell里跳转到tomcat中的webapps路径下，使用rz命令上传war包，重启tomcat(tomcat会自动解析war包)。在webapps路径下输入ll会发现项目已经解析出来了。<br>在浏览器中输入ip地址:8080/项目名就能访问了。</p>
+<pre><code>只是大概的找了个小白鼠服务器搞了搞，还有很多细节比如环境变量配置(可以从任何目录用快捷指令方便的对软件进行操控)、服务管理(服务自启动)、用户权限限制(mysql、ftp等用户不能随意访问)、tomcat端口号修改(tomcat默认端口号8080但是一般http访问的是80端口，而且linux限制非root用户程序是不能使用小于1024的端口的)、域名解析(让用户一点一点输入地址真的好么)等等都需要慢慢完善的。
+以上只是一个linux小白自己捣鼓出来的，写的仓促，知识储备也不多，难免有错误，发现错误了请留言指出，灰常感谢！
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/03/07/Java反射机制浅谈/" itemprop="url">
                   Java反射机制浅谈
                 </a>
@@ -724,100 +824,6 @@ Java程序在运行时，Java运行时系统一直对所有的对象进行所谓
             
               
                 
-                <a class="post-title-link" href="/2016/12/28/Java运行机制/" itemprop="url">
-                  Java运行机制
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-28T14:48:17+08:00" content="2016-12-28">
-              2016-12-28
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Java程序的运行必须经过编写、编译、运行3个步骤</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/12/28/Java面试题/" itemprop="url">
                   Java多线程面试题
                 </a>
@@ -930,6 +936,100 @@ ServletRequest：（线程是安全的）对于每一个请求，由一个工作
 实例进行响应处理，之后放回到实例池中等待下此请求。这样就造成并发访问的问题。此时,局部变量(字段)也是安全的，但对于全局变量和共享数据是不安全的，需要进行同步处理。而对于这样多实
 例的情况SingleThreadModel接口并不能解决并发访问问题。 
 </code></pre><p>31、什么是事务?<br>    事务是访问并可能更新数据库中各种数据项的一个程序执行单元。通俗的说就是一组操作要么一起成功要么一起失败。<br>32、事务的4个基本特征是什么?<br>    原子性 : 在整个事务的所有操作中，要么一起完成，要么一起失败，不可能停滞在某个环节。事务在执行过程中发生错误，会被回滚(roll back)到事务的开始前状态，就像这个事务从来没有执行过一样。<br>    一致性 : 在事务执行前后，数据库的完整性约束没有发生改变。<br>    隔离性 : 隔离状态执行事务，使他们好像是系统在给定时间内执行的唯一操作。如果有两个事务，运行在相同的时间内，执行相同的功能，事物的隔离性将确保没一件事务在系统中认为只有该事务在运行系统。<br>    这种属性有时成为串行化，为了防止事务操作间的混淆，必须串行化活序列化请求，使得在同一时间内仅仅有一个请求用于同一数据。<br>    持久性 : 在事务完成以后，该事务所对数据库所做的更改便持久的保存在数据库之中，并不会被回滚。<br>33、数据库表常见约束有哪些、<br>    唯一约束，主键约束，非空约束，默认约束，检查约束<br>34、主键约束和唯一约束有什么不同?<br>    主键约束和唯一约束都不能有重复的数据。<br>    主键约束不能为null，为一约束可以有一个null<br>    一张表中只能有一个主键，一张表可以有多个为一约束<br>35、索引有什么优点和缺点?<br>    索引会加快数据的查询速度，但是索引也需要存储空间，所以索引过多也会占用太多空间。由于更新数据是会更新索引，所以索引会降低增删改的效率。<br>36、数据库中的视图是什么？有什么作用?<br>    视图是一张虚拟表，可以理解为一个复杂查询的存储.<br>    视图一般都是只读的，视图可以存储复杂的查询，简化查询操作，可以隐藏必要的信息。保证数据库的安全。<br>37、数据库的三大范式是什么?<br>    第一范式 : 是指数据库表中的每一列都是不可分割的基本数据项，同一列中不能有多个值，即实体中的某个属性不能有多个值或者不能有重复的属性.<br>    第二范式 : 是在第一范式的基础上建立起来的，即满足第二范式必须先满足第一范式。第二范式要求数据库表中的每一个实例或行必须可以被唯一的区分。<br>    第三范式 : 要求一个数据库表中不包含已在其它表中已包含的非主关键字信息。<br>38、数据库优化思路?<br>    1、SQL语句优化<br>    1）、应尽量避免where子句中使用!=活&lt;&gt;操作符、否则将引起放弃索引而进行全表扫描<br>    2)、应当尽量避免where子句对字段进行null值判断，否则将导致引擎放弃使用索引而使用全表扫描，如:select  id from t where num is null 可以在num上设置默认值0:select id from t where num = 0<br>    3)、用where子句代替Having子句，因为Having只会在检索出所有记录之后才会对结果集进行过滤.<br>    4)、很多时候用Exits代替in是一个很好地选择<br>    2、索引优化<br>    3、数据库结构优化</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/28/Java运行机制/" itemprop="url">
+                  Java运行机制
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-28T14:48:17+08:00" content="2016-12-28">
+              2016-12-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Java程序的运行必须经过编写、编译、运行3个步骤</p>
 
           
         
@@ -1199,102 +1299,6 @@ url-pattern：表示哪些请求交给Spring Web MVC处理， &quot;/&quot; 是�
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/27/mongodb入门1-数据库的分类/" itemprop="url">
-                  mongodb入门1-数据库的分类
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-27T10:36:51+08:00" content="2016-12-27">
-              2016-12-27
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1 : Sql 数据库 : 支持Sql语言的数据库 . Oracl、MySql…<br>2 : NoSql 数据库 : 不支持Sql语言的数据库 . Redis , MongoDb…</p>
-<p>两种数据库有n多区别..<br>Sql 数据库                  NoSql数据库<br>实施一致性                   简单快捷<br>事物                        方便扩展<br>多表联合查询                 更好的性能</p>
-<p>MongDb :<br>1、无数据结构限制 : 没有表结构的限制，每条数据可以有完全不同的结构<br>                   业务开发方便快捷<br>                   sql数据库需要先定义表结构在使用<br>2、完全的索引支持 : redis的key-value<br>                  hbase的但索引，二级索引需要自己实现。<br>                  单键索引，多建索引: {x:1,y:1}<br>                  数组索引 : [“apple”,”lemon”]<br>                  全文索引 : “i am luziyang”<br>                  地理位置索引 : 2D<br>3、方便的冗余和扩展 : 复制集保证数据安全<br>                    分片扩展数据规模<br>4、良好的支持 : 完善的文档<br>               齐全的驱动支持</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1340,7 +1344,7 @@ url-pattern：表示哪些请求交给Spring Web MVC处理， &quot;/&quot; 是�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
